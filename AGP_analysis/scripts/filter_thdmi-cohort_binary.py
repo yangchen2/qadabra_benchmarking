@@ -47,7 +47,7 @@ def filter_thdmi_cohort_binary(biom_paths: list, md_path: str):
         logging.info(f"Table shape before filter: {biom_df.shape}")
         # Transpose for filtering
         biom_df = biom_df.transpose()
-        
+
         # Filter the table
         biom_df_filtered = biom_df.loc[biom_df.index.isin(md_thdmi_cohort_binary.index)]
         # Transpose back
@@ -72,10 +72,18 @@ def filter_thdmi_cohort_binary(biom_paths: list, md_path: str):
 
 if __name__ == '__main__':
     try:
-        # File paths for the BIOM files
-        biom_paths = ['../tables/df_16S_collapsed_Family.biom',
+        # File paths for the BIOM files 
+        biom_paths = ['../tables/df_16S_collapsed_Kingdom.biom',
+                      '../tables/df_16S_collapsed_Phylum.biom',
+                      '../tables/df_16S_collapsed_Class.biom',
+                      '../tables/df_16S_collapsed_Order.biom',
+                      '../tables/df_16S_collapsed_Family.biom',
                       '../tables/df_16S_collapsed_Genus.biom',
                       '../tables/df_16S_collapsed_Species.biom',
+                      '../tables/df_metagenomic_collapsed_Kingdom.biom',
+                      '../tables/df_metagenomic_collapsed_Phylum.biom',
+                      '../tables/df_metagenomic_collapsed_Class.biom',
+                      '../tables/df_metagenomic_collapsed_Order.biom',
                       '../tables/df_metagenomic_collapsed_Family.biom',
                       '../tables/df_metagenomic_collapsed_Genus.biom',
                       '../tables/df_metagenomic_collapsed_Species.biom']
