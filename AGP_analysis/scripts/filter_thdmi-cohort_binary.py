@@ -43,11 +43,15 @@ def filter_thdmi_cohort_binary(biom_paths: list, md_path: str):
         logging.info(f"Table file: {biom_path}")
         biom_table = load_table(biom_path)
 
-        biom_df = pd.DataFrame(biom_table.to_dataframe().transpose())
+        biom_df = pd.DataFrame(biom_table.to_dataframe())
         logging.info(f"Table shape before filter: {biom_df.shape}")
-
+        # Transpose for filtering
+        biom_df = biom_df.transpose()
+        
         # Filter the table
         biom_df_filtered = biom_df.loc[biom_df.index.isin(md_thdmi_cohort_binary.index)]
+        # Transpose back
+        biom_df_filtered = biom_df_filtered.transpose()
         logging.info(f"Table shape after filter: {biom_df_filtered.shape}")
 
         # Convert backing to BIOM table
