@@ -1,0 +1,9 @@
+2024-02-27 16:07:39,008 - INFO - STEP 1: Loading BIOM files: ../tables/df_16S_subset.biom and ../tables/df_metagenomic_subset.biom
+2024-02-27 16:07:39,009 - DEBUG - Creating converter from 3 to 5
+2024-02-27 16:07:39,416 - INFO - 16S table shape: (1177, 639)
+2024-02-27 16:07:39,416 - INFO - Metagenomic table shape: (1177, 956)
+2024-02-27 16:07:39,416 - INFO - -----> COMPLETED: BIOM files successfully converted to DataFrames
+2024-02-27 16:07:39,419 - INFO - STEP 2: Rarefying BIOM tables to specified sampling depths.
+2024-02-27 16:10:22,910 - DEBUG - Creating converter from 5 to 3
+2024-02-27 16:10:23,438 - INFO - -----> COMPLETED: Rarefied DataFrames saved and outputted as BIOM.
+2024-02-27 16:10:23,439 - INFO - Rarefaction completed successfully.

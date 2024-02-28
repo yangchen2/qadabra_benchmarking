@@ -1,0 +1,32 @@
+2024-02-27 16:04:43,147 - INFO - STEP 1: Loading BIOM files: ../tables/16S_feature-table.biom and ../tables/wol2_filtered_table_zebra.biom
+2024-02-27 16:04:43,156 - DEBUG - Creating converter from 3 to 5
+2024-02-27 16:04:49,419 - INFO - 16S table shape: (1449, 49670)
+2024-02-27 16:04:49,420 - INFO - Metagenomic table shape: (1215, 956)
+2024-02-27 16:04:49,420 - INFO - -----> COMPLETED: BIOM files successfully converted to DataFrames
+2024-02-27 16:04:49,434 - INFO - STEP 2: Starting to align sample IDs between the 16S and metagenomic tables.
+2024-02-27 16:04:49,437 - INFO - -----> Indexes only in 16S: Index(['10317.X00178929', '10317.X00178936', '10317.X00178950',
+       '10317.X00178955', '10317.X00178960', '10317.X00178983',
+       '10317.X00178986', '10317.X00178993', '10317.X00178995',
+       '10317.X00179001',
+       ...
+       '10317.X00215588', '10317.X00215680', '10317.X00215765',
+       '10317.X00215772', '10317.X00215779', '10317.X00215781',
+       '10317.X00215847', '10317.X00215878', '10317.X00215898',
+       '10317.X00215928'],
+      dtype='object', length=234)
+2024-02-27 16:04:49,437 - INFO - -----> Indexes only in metagenomic: Index([], dtype='object')
+2024-02-27 16:04:57,705 - INFO - 16S table shape: (1215, 49670)
+2024-02-27 16:04:57,706 - INFO - Metagenomic table shape: (1215, 956)
+2024-02-27 16:04:57,706 - INFO - -----> COMPLETED: DataFrame samples successfully aligned.
+2024-02-27 16:04:57,706 - INFO - STEP 3: Starting to align sample IDs from the 16S and metagenomic tables to metadata table.
+2024-02-27 16:05:05,023 - INFO - 16S table shape: (1177, 49670)
+2024-02-27 16:05:05,023 - INFO - Metagenomic table shape: (1177, 956)
+2024-02-27 16:05:05,023 - INFO - -----> COMPLETED: DataFrame samples successfully aligned with metadata.
+2024-02-27 16:05:05,025 - INFO - STEP 4: Removing any feature, either 16S or WGS, below the per-sample minimum.
+2024-02-27 16:05:05,025 - INFO - -----> Finding max(min(16S), min(WGS))).
+2024-02-27 16:05:08,140 - INFO - -----> Filtering rows.
+2024-02-27 16:05:08,539 - INFO - 16S table shape: (639, 1177)
+2024-02-27 16:05:08,539 - INFO - Metagenomic table shape: (956, 1177)
+2024-02-27 16:05:08,539 - INFO - -----> Saving as BIOM tables.
+2024-02-27 16:05:08,588 - DEBUG - Creating converter from 5 to 3
+2024-02-27 16:05:09,148 - INFO - -----> COMPLETED: Subsetted DataFrames saved and outputted as BIOM.
